@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+</head>
+<body>
+    <script>
+        //Task1 Print Largest Number and 3rd Largest Number 
+            //Largest Number
+            let arr = [12, 34, 55, 17, 18];
+            console.log(arr)
+            let largestNum = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > largestNum) {
+                    largestNum = arr[i]
+                }
+            }
+            console.log("largest of element in an array is: " + largestNum)
+
+            //3rd Largest Number
+            let arr1 = [1, 3, 98, 7, 44, 22];
+            console.log(arr1)
+            let first = []
+            let second = []
+            let third = []
+            for (let i = 1; i < arr1.length; i++) {
+                if (arr1[i] > first) {
+                    third = second;
+                    second = first;
+                    first = arr1[i];
+                } else if (arr1[i] > second) {
+                    third = second;
+                    second = arr1[i];
+
+                } else if (arr1[i] > third) {
+                    third = arr1[i]
+                }
+            }
+            console.log("Third Largest element in Array : " + third)
+
+            //Task2 Remove The Dublicate elements And Print Array
+            let array = [1, 2, 1, 3, 2, 4, 3, 5];
+            console.log(array);
+            let array1 = [];
+            for (i = 0; i < array.length; i++) {
+                if (array1.indexOf(array[i]) === -1) {
+                    array1.push(array[i])
+                }
+            }
+            console.log("Array in without dublicates " + array1)
+
+            //Task 3 Leap Year
+            console.log("Leap Years in B/w 2000 to 2040")
+            function isLeapYear(strYear, lastYear) {
+                for (i = strYear; i <= lastYear; i++) {
+                    if (i % 4 == 0 && i % 4 != 100 || i % 400 == 0) {
+                        console.log(i + " is Leap Year")
+                    }
+                }
+            }
+            isLeapYear(2000, 2040)
+        </script>
+</body>
+</html>
